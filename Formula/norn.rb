@@ -37,6 +37,7 @@ class Norn < Formula
     log_path var/"log/norn.log"
     error_log_path var/"log/norn.log"
     working_dir HOMEBREW_PREFIX
+    environment_variables PATH: "#{HOMEBREW_PREFIX}/bin:#{HOMEBREW_PREFIX}/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
   end
 
   test do
