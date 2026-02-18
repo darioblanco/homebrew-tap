@@ -7,7 +7,7 @@ class Norn < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://releases.darioblanco.com/norn/v0.0.1/norn-0.0.1-darwin-arm64.tar.gz"
-      sha256 "4e099b59382495732353b08d0dcacfeb7c581716f893c1bb4c306490607f72f0"
+      sha256 "9d3a7d6d6257cf1c62dc3e2119d8f5dae6dd3ed819d391060db26e49cb3f8ae5"
     else
       url "https://releases.darioblanco.com/norn/v0.0.1/norn-0.0.1-darwin-x86_64.tar.gz"
       sha256 "PLACEHOLDER"
