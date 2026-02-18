@@ -31,6 +31,14 @@ class Norn < Formula
     bin.install "nornd"
   end
 
+  service do
+    run [opt_bin/"nornd"]
+    keep_alive true
+    log_path var/"log/norn.log"
+    error_log_path var/"log/norn.log"
+    working_dir HOMEBREW_PREFIX
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/norn --version")
     assert_match version.to_s, shell_output("#{bin}/nornd --version")
@@ -49,10 +57,13 @@ class Norn < Formula
         npm install -g @openai/codex
         export OPENAI_API_KEY=sk-...
 
-      Start the daemon:
-        nornd
+      To start the daemon and keep it running across reboots:
+        brew services start norn
 
-      Then open http://localhost:7433 in your browser.
+      To stop it:
+        brew services stop norn
+
+      Dashboard: http://localhost:7433
     EOS
   end
 end
