@@ -1,25 +1,25 @@
 class Norn < Formula
   desc "Agent session orchestrator for Tailscale networks"
   homepage "https://github.com/darioblanco/norn"
-  version "0.1.0"
+  version "0.0.1"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/norn/releases/download/v0.1.0/norn-0.1.0-darwin-arm64.tar.gz"
-      sha256 "PLACEHOLDER"
+      url "https://github.com/darioblanco/norn/releases/download/v0.0.1/norn-0.0.1-darwin-arm64.tar.gz"
+      sha256 "4e099b59382495732353b08d0dcacfeb7c581716f893c1bb4c306490607f72f0"
     else
-      url "https://github.com/darioblanco/norn/releases/download/v0.1.0/norn-0.1.0-darwin-x86_64.tar.gz"
+      url "https://github.com/darioblanco/norn/releases/download/v0.0.1/norn-0.0.1-darwin-x86_64.tar.gz"
       sha256 "PLACEHOLDER"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/norn/releases/download/v0.1.0/norn-0.1.0-linux-aarch64.tar.gz"
+      url "https://github.com/darioblanco/norn/releases/download/v0.0.1/norn-0.0.1-linux-aarch64.tar.gz"
       sha256 "PLACEHOLDER"
     else
-      url "https://github.com/darioblanco/norn/releases/download/v0.1.0/norn-0.1.0-linux-x86_64.tar.gz"
+      url "https://github.com/darioblanco/norn/releases/download/v0.0.1/norn-0.0.1-linux-x86_64.tar.gz"
       sha256 "PLACEHOLDER"
     end
   end
