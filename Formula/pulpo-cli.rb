@@ -1,21 +1,21 @@
 class PulpoCli < Formula
   desc "Pulpo CLI — manage agent sessions from the terminal"
   homepage "https://github.com/darioblanco/pulpo"
-  version "0.0.17"
+  version "0.0.18"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.17/pulpo-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "be032831559fd4c427d4de136c9098885a2d893aefb8d335904643eb295b76b7"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.18/pulpo-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "a48be1e44d8798d90df404153861344de2f47b5007b0dff9e6bef67a67f7a72e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.17/pulpo-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "8355774c742a90a4edc8456863fab772ca5f7d3da46e84f41530badff117c7c0"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.18/pulpo-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "2a0f078401aed1fc289f408c0f51cb8e7369603da7eec7d3b2752a95389b231e"
     end
   end
   if OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.17/pulpo-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "90c7efa4820142f8a092101115038fc8f0750c5ee1c5ef20da13ccd0770d4252"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.18/pulpo-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3fb8e13049e9ab00dac932d78ed70fd9cd6ff5cdb3539ff496faad9faf80185a"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
