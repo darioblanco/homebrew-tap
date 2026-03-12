@@ -1,24 +1,24 @@
 class Pulpo < Formula
   desc "Pulpo daemon + CLI for managing agent sessions"
   homepage "https://github.com/darioblanco/pulpo"
-  version "0.0.18"
+  version "0.0.19"
   license any_of: ["MIT", "Apache-2.0"]
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.18/pulpod-aarch64-apple-darwin.tar.xz"
-      sha256 "79dfa550fa4a2c6e48713088150cff2da600d2d6a3755ab129684abacb7a7f68"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.19/pulpod-aarch64-apple-darwin.tar.xz"
+      sha256 "0cb8c0b7773bf5cf79a2bfc98c359bfceb373cdf029fe6425d9b4828847fb114"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.18/pulpod-x86_64-apple-darwin.tar.xz"
-      sha256 "d10049319ae72bb40fd23dab02d79613cd6cfe9dd7ed4366c541795df8f8d935"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.19/pulpod-x86_64-apple-darwin.tar.xz"
+      sha256 "44e7776e8a377a8fc1ed781b235ddbee223fa2dba71b6f1c0762a0af1c0f02c6"
     end
   end
 
   if OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.18/pulpod-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e96f9e02f014230bb9a66c4cb73005b811f58b651d9f20b8e098e0f3396e6e68"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.19/pulpod-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "92c4fc58d749499cd07693ec3f0007ba4154c52e4d74a6219ad66661365d8f3d"
     end
   end
 
@@ -53,6 +53,12 @@ class Pulpo < Formula
 
       OpenAI Codex:
         npm install -g @openai/codex
+
+      Google Gemini CLI:
+        npm install -g @google/gemini-cli
+
+      OpenCode:
+        go install github.com/opencode-ai/opencode@latest
 
       Start daemon:
         brew services start pulpo
