@@ -1,24 +1,24 @@
 class Pulpo < Formula
   desc "Pulpo daemon + CLI for managing agent sessions"
   homepage "https://github.com/darioblanco/pulpo"
-  version "0.0.25"
+  version "0.0.26"
   license any_of: ["MIT", "Apache-2.0"]
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.25/pulpod-aarch64-apple-darwin.tar.xz"
-      sha256 "38f87263f4b977a296ffed8492f196e18721f7c510477a123be64fc9ac1ef355"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.26/pulpod-aarch64-apple-darwin.tar.xz"
+      sha256 "707c4dd21acb68cf485b528582e8341b77f28090624573839c1234621709c73f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.25/pulpod-x86_64-apple-darwin.tar.xz"
-      sha256 "3a30ec7d94112d7294a1fa3964dcda0caf33308c77d47455da98f5ef6256467a"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.26/pulpod-x86_64-apple-darwin.tar.xz"
+      sha256 "1b6a0616bc108d2c70885f3a43f5ca564d48edaee77694b76c44477ef559a39a"
     end
   end
 
   if OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.25/pulpod-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "485c300d7238b3d6ac2272b82b74cf802bb3e0c0d3e251149e5f62aa6ce1fc55"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.26/pulpod-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "8bc6df1a15b3d14d87511ee6d4dd41a2e21f8efef23fc95c4d28c530e9878ebd"
     end
   end
 
@@ -45,20 +45,14 @@ class Pulpo < Formula
 
   def caveats
     <<~EOS
-      pulpo requires at least one coding agent provider to be installed and authenticated.
+      pulpo runs any command in managed tmux sessions. No agent is required,
+      but here are some popular coding agents you can use:
 
-      Claude Code:
-        npm install -g @anthropic-ai/claude-code
-        claude login
-
-      OpenAI Codex:
-        npm install -g @openai/codex
-
-      Google Gemini CLI:
-        npm install -g @google/gemini-cli
-
-      OpenCode:
-        go install github.com/opencode-ai/opencode@latest
+      Claude Code:    npm install -g @anthropic-ai/claude-code
+      OpenAI Codex:   npm install -g @openai/codex
+      Gemini CLI:     npm install -g @google/gemini-cli
+      Aider:          pip install aider-chat
+      OpenCode:       go install github.com/opencode-ai/opencode@latest
 
       Start daemon:
         brew services start pulpo
