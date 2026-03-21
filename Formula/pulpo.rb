@@ -1,24 +1,24 @@
 class Pulpo < Formula
   desc "Pulpo daemon + CLI for managing agent sessions"
   homepage "https://github.com/darioblanco/pulpo"
-  version "0.0.26"
+  version "0.0.29"
   license any_of: ["MIT", "Apache-2.0"]
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.26/pulpod-aarch64-apple-darwin.tar.xz"
-      sha256 "707c4dd21acb68cf485b528582e8341b77f28090624573839c1234621709c73f"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.29/pulpod-aarch64-apple-darwin.tar.xz"
+      sha256 "69829b116695aaa5ba86d9ef69dd77838c11b3819a26dc9a3ad8cd16fd4b4a05"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.26/pulpod-x86_64-apple-darwin.tar.xz"
-      sha256 "1b6a0616bc108d2c70885f3a43f5ca564d48edaee77694b76c44477ef559a39a"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.29/pulpod-x86_64-apple-darwin.tar.xz"
+      sha256 "0d4b9df30607164332df903d0366d03b575978863ef1bfe0ac86fb308826edfb"
     end
   end
 
   if OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.26/pulpod-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8bc6df1a15b3d14d87511ee6d4dd41a2e21f8efef23fc95c4d28c530e9878ebd"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.29/pulpod-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "539d1d154679c899f837fb8da625c52def4620a575921e754d3c827ed44568ab"
     end
   end
 
