@@ -48,17 +48,21 @@ class Pulpo < Formula
       pulpo runs any command in managed tmux sessions. No agent is required,
       but here are some popular coding agents you can use:
 
-      Claude Code:    npm install -g @anthropic-ai/claude-code
-      OpenAI Codex:   npm install -g @openai/codex
-      Gemini CLI:     npm install -g @google/gemini-cli
-      Aider:          pip install aider-chat
-      OpenCode:       go install github.com/opencode-ai/opencode@latest
+        Claude Code:    npm install -g @anthropic-ai/claude-code
+        OpenAI Codex:   npm install -g @openai/codex
+        Gemini CLI:     npm install -g @google/gemini-cli
+        Aider:          pip install aider-chat
 
-      Start daemon:
+      To start the daemon and auto-start on login:
         brew services start pulpo
 
-      Dashboard:
-        http://localhost:7433
+      After upgrading, restart the daemon to pick up the new version:
+        brew services restart pulpo
+
+      To stop the daemon:
+        brew services stop pulpo
+
+      Dashboard: http://localhost:7433
     EOS
   end
 end

@@ -1,0 +1,24 @@
+name: Brew Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tap this repository
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/darioblanco"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/darioblanco/homebrew-tap"
+
+      - name: Brew audit
+        run: brew audit --formula Formula/*.rb
+
+      - name: Brew style
+        run: brew style Formula/*.rb
