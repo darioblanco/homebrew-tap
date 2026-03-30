@@ -1,27 +1,32 @@
 class PulpoCli < Formula
   desc "Pulpo CLI — manage agent sessions from the terminal"
   homepage "https://github.com/darioblanco/pulpo"
-  version "0.0.39"
+  version "0.0.40"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.39/pulpo-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "9eec353a2e650bd8e63ac71cb966f71bc94f00c99fb8c3913911f288187e3ead"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.40/pulpo-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "e06146b458cb8163b2f44c9354ec48a1450e442945e2ec42e94a22d2ea921661"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.39/pulpo-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "8feff09c8b82887725a7ef1730761ca3a66f3ba0663d62fc0192f3a1f98a0ffd"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.40/pulpo-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "a068a12b318b1c13e4b1edef4864ad45219877f1080e3be4f427dc09573493cc"
     end
   end
   if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.40/pulpo-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "90b87b18171847ca90d25c195803855f5022c322d32cb001d618335ac038c4f8"
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.39/pulpo-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "318b2f8f1ea92b00596e5a3f0db5e40650df15a77da4d554db22a4519bdd03ab"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.0.40/pulpo-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "90f8fd695a03b534313112bb6d6581d21de8801a733f463bb49470b1682968f9"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin": {},
+    "aarch64-unknown-linux-gnu": {},
     "x86_64-apple-darwin": {},
     "x86_64-pc-windows-gnu": {},
     "x86_64-unknown-linux-gnu": {}
@@ -47,6 +52,9 @@ class PulpoCli < Formula
       bin.install "pulpo"
     end
     if OS.mac? && Hardware::CPU.intel?
+      bin.install "pulpo"
+    end
+    if OS.linux? && Hardware::CPU.arm?
       bin.install "pulpo"
     end
     if OS.linux? && Hardware::CPU.intel?
