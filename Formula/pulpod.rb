@@ -1,25 +1,25 @@
 class Pulpod < Formula
   desc "Pulpo daemon — manages agent sessions via tmux/Docker"
   homepage "https://github.com/darioblanco/pulpo"
-  version "0.1.1"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.1.1/pulpod-aarch64-apple-darwin.tar.xz"
-      sha256 "a599323405e873fe0d6376834be0703a6b01ef30a4bb00d53becaf02366fad23"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.2.0/pulpod-aarch64-apple-darwin.tar.xz"
+      sha256 "cf3cf97a999e3006cb22734c31134a8e1982ba71e103e6766e746e9f99dea170"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.1.1/pulpod-x86_64-apple-darwin.tar.xz"
-      sha256 "460718505bc93939b011ae96c224055f5b09462e1ce16b482f38bf0fbe850cfe"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.2.0/pulpod-x86_64-apple-darwin.tar.xz"
+      sha256 "cb25bd91cb779fb6f549610c8fa547007d6ee43b0155ab582bdc23cb9bdc8166"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.1.1/pulpod-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "bad022c5f74a62a8e346a1905a5553b254309f88861cd16914e21694dd57ec3a"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.2.0/pulpod-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "2926b7a80e052a96d486efce9446a1c7fbc6f88a4106396c1777c1f44e79c4e9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/darioblanco/pulpo/releases/download/v0.1.1/pulpod-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "be1a0a3fb26102f97ba9cacd36d3d0c3e0bdc2f39dee6a8ff1747406b6b3f3df"
+      url "https://github.com/darioblanco/pulpo/releases/download/v0.2.0/pulpod-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "47f852fd498fd3a3d45284e14b810eeec4fd3a03f5c17455c6904bcf523d628d"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -28,7 +28,6 @@ class Pulpod < Formula
     "aarch64-apple-darwin": {},
     "aarch64-unknown-linux-gnu": {},
     "x86_64-apple-darwin": {},
-    "x86_64-pc-windows-gnu": {},
     "x86_64-unknown-linux-gnu": {}
   }
 
